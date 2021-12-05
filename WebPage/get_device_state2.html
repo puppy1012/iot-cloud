@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=EUC-KR" http-equiv="content-type">
+        <title> - </title>
+        <style>
+    /* your style comes here */
+    body {
+      background-color : white;
+      text-align:center;
+      background-repeat : no-repeat;
+      background-position : right top;
+      
+    }
+    h1{
+
+      text-transform:uppercase;
+      font-family: Verdana;
+      color : red;
+      text-align:center;
+      
+    }
+    h2 {
+      
+      text-align:center;
+      color: red;
+      font-weight: bold;
+    }
+    #left {
+      
+      text-align: center;
+      color: #663333;
+      font-weight: bold;
+    }
+    .right {
+      
+      text-align: center;
+      color: #663333;
+      font-weight: bold;
+    }
+    a:link {
+      font-size: 1.5em;
+      font-style: italic;
+      text-decoration: none;
+      text-align:center;
+    }
+    
+   
+   
+    </style>
+
+
+        <!-- JQuery 라이브러리 설정 -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+        <!-- 디바이스 조회 자바스크립트 로딩-->
+        <script src="device_state.js"></script>
+        <script src="put_deviceData.js"></script>
+    </head>
+
+    <body>
+        <fieldset>
+        <h1>센서별 최신 정보 </h1>
+        <hr>
+
+        
+
+        <input type="button" value="온습도 센서" onclick="device_state('temperture');" />
+        <input type="button" value="토양 센서" onclick="device_state('Soilsensor');" />
+        <input type="button" value="LED" onclick="device_state('LED');" />
+        <input type="button" value="UserMode(Auto,Self)" onclick="device_state('UserMode');" />
+        <input type="button" value="물 펌프" onclick="device_state('Waterpump');" />
+        <input type="button" value="Total" onclick="device_state('Total');" />
+      </fieldset>
+
+      <fieldset>
+        <h1>결과</h1>
+        <hr>
+        <div id="result"style="display: inline-block">No Data</div>
+        
+        <h1>센서 제어</h1>
+        <table id="PutDeviceData">
+            <tbody>
+              <form>
+                
+              </form>
+            </tbody>
+        </table>
+        <input type="button" value="LED ON" onclick="put_deviceData('LED','ON');" />
+        <input type="button" value="Waterpump ON" onclick="put_deviceData('Waterpump','ON');" />
+        <input type="button" value="UserMode : SelfMode" onclick="put_deviceData('UserMode','Self');" /> <br>
+        <input type="button" value="LED OFF" onclick="put_deviceData('LED','OFF');" />
+        <input type="button" value="Waterpump OFF" onclick="put_deviceData('Waterpump','OFF');" />
+        <input type="button" value="UserMode : AutoMode" onclick="put_deviceData('UserMode','Auto');" />
+        <br><br><br>
+        <div id="put_deviceDataResult"style="display: inline-block">No Data</div><br>
+        
+        </fieldset>
+
+    </body>
+</html>
